@@ -10,6 +10,7 @@ class OverworldMap {
     this.upperImage.src = config.upperSrc;
   }
 
+
   drawLowerImage(ctx, cameraPerson) {
     ctx.drawImage(
       this.lowerImage,
@@ -28,6 +29,8 @@ class OverworldMap {
 
   isSpaceTaken(currentX, currentY, direction) {
     const { x, y } = utils.nextPosition(currentX, currentY, direction);
+    console.log(`${x},${y}`);
+    console.log(this.walls)
     return this.walls[`${x},${y}`] || false;
   }
 }
